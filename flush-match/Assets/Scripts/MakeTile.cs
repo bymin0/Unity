@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class MakeTile : MonoBehaviour
 {
-    public string Type;
+    public TileType Type;
     public Renderer tileRenderer;
-    public TextMeshProUGUI textMeshPro;
 
-    public void Initialize(string type, int r, int c)
+    public void Initialize(TileType type, int r, int c)
     {
         Type = type;
         AssignRenderer();
@@ -18,20 +18,18 @@ public class MakeTile : MonoBehaviour
 
     private void UpdateTileDisplay()
     {
-        //AssignRenderer();
-
         switch(Type)
         {
-            case "HEART":
+            case TileType.HEART:
                 tileRenderer.material.color = Color.red;
                 break;
-            case "DIAMOND":
+            case TileType.DIAMOND:
                 tileRenderer.material.color = Color.blue;
                 break;
-            case "CLUB":
+            case TileType.SPADE:
                 tileRenderer.material.color = Color.gray;
                 break;
-            case "SPADE":
+            case TileType.CLUB:
                 tileRenderer.material.color = Color.black;
                 break;
             default:

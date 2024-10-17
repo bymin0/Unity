@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     void LoadLevelData()
     {
         string filePath = Path.Combine(Application.streamingAssetsPath, jsonFileName);
-        Debug.Log("file path: " + filePath);
+        
         if (File.Exists(filePath))
         {
             string jsonData = File.ReadAllText(filePath);
@@ -72,10 +72,10 @@ public class GameManager : MonoBehaviour
                 int index = row * levelData.columns + col; // levelData: 1dimensional, tiles: 2d
 
                 // get tile's value
-                string tileType = levelData.tiles[index];
+                TileType tileType = (TileType)levelData.tiles[index];
 
                 // if levelData.tiles[index] value is "Empty" will not show
-                if (tileType == "EMPTY")
+                if (tileType == 0)
                     continue;
 
                 // calculate tile positions
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
                 MakeTile tile = newTile.GetComponent<MakeTile>();
                 tile.Type = tileType;
-                tile.Initialize(levelData.tiles[index], row, col);
+                tile.Initialize(tileType, row, col);
             }
         }
     }
