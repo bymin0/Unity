@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
         Vector2 end = new Vector2(4, 5);
 
         bool isMatch = TileMatcher.AreTilesMatching(start, end, board);
-        Debug.Log(isMatch);
     }
 
     // load json file & call GenerateTiles(levelData)
@@ -89,7 +88,7 @@ public class GameManager : MonoBehaviour
 
                 MakeTile tile = newTile.GetComponent<MakeTile>();
                 tile.Type = tileType;
-                tile.Initialize(row, col);
+                tile.Initialize(levelData.tiles[index], row, col);
             }
         }
     }
