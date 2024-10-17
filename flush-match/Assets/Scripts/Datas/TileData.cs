@@ -1,0 +1,21 @@
+public enum TileType
+{
+    EMPTY,
+    ACE,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN,
+    EIGHT,
+    NINE,
+    TEN,
+    JACK,
+    QUEEN,
+    KING,
+    HEART,
+    DIAMOND,
+    SPADE,
+    CLUB
+}
