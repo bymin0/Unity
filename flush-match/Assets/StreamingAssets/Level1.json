@@ -1,7 +1,7 @@
 {
   "rows": 12,
   "columns": 10,
-  "depth": 2,
+  "depth": 1,
   "tiles": [
     "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY",
     "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY",
