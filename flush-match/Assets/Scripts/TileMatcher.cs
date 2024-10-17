@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class TileMatcher : MonoBehaviour
+public class TileMatchManager : MonoBehaviour
 {
-    static public bool AreTilesMatching(Vector2 start, Vector2 end, int[,] board)
+    // check two tiles match algorithm
+    public bool AreTilesMatching(Vector2 start, Vector2 end, int[,] board)
     {
         // setting BFS direction
         Vector2[] directions = {Vector2.left, Vector2.right, Vector2.up, Vector2.down};
@@ -61,5 +62,12 @@ public class TileMatcher : MonoBehaviour
 
         // faild search channel
         return false;
+    }
+
+    // disable matching tiles
+    public void HandleMatch(MakeTile firstTile, MakeTile secondTile)
+    {
+        firstTile.gameObject.SetActive(false);
+        secondTile.gameObject.SetActive(false);
     }
 }
