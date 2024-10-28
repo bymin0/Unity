@@ -22,11 +22,12 @@ public enum TileType
     CLUB
 }
 
-public class TilecolorData
+public class TileData
 {
+    private Dictionary<TileType, string> tileSprites;
     private Dictionary<TileType, string> tileColors;
 
-    public TilecolorData()
+    public TileData()
     {
         tileColors = new Dictionary<TileType, string>()
         {
@@ -35,11 +36,26 @@ public class TilecolorData
             { TileType.SPADE, "#0000FF" },
             { TileType.CLUB, "#00FfFF" }
         };
+
+        tileSprites = new Dictionary<TileType, string>()
+        {
+            {TileType.HEART, "Sprites/Aheart" },
+            {TileType.DIAMOND, "Sprites/Adiamond" },
+            {TileType.SPADE, "Sprites/Aspade" },
+            {TileType.CLUB, "Sprites/Aclub" }
+        };
     }
 
     public string GetColor(TileType tileType)
     {
         if (tileColors.TryGetValue(tileType, out string color)) return color;
         return "#FFFFFF";
+    }
+
+    public string GetImagePath(TileType tileType)
+    {
+        if (tileSprites.TryGetValue(tileType, out string imagePath))
+            return imagePath;
+        return null;
     }
 }

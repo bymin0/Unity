@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using System;
+using System.IO;
+using UnityEngine.UI;
 
 public class Tile : MonoBehaviour
 {
     public int Row { get; private set; }
     public int Col { get; private set; }
 
+    public Vector2 imgSize;
+
+    public Image image; // load ui image
     public TileType Type;
-    public TilecolorData colorData;
+    public TileData tileData;
     public GameManager gameManager;
     public Renderer tileRenderer;
 
@@ -19,28 +22,21 @@ public class Tile : MonoBehaviour
         gameManager = GameManager.instance; // cashing
     }
 
-    // will be remove method
-    public void Initialize(TileType type, int r, int c)
+    // display tile's color(or img?)
+    public void UpdateTileDisplay(TileType type, int r, int c)
     {
         Type = type;
         Row = r;
         Col = c;
 
-        //UpdateTileDisplay();
-    }
-
-    // display tile's color(or img?)
-    public void UpdateTileDisplay(TileType type)
-    {
-        Type = type;
-
         if (tileRenderer == null)
             tileRenderer = GetComponent<Renderer>();
 
-        if (colorData == null)
-            colorData = new TilecolorData();
+        if (tileData == null)
+            tileData = new TileData();
 
-        string colorHex = colorData.GetColor(Type);
+        string colorHex = tileData.GetColor(Type);
+        
         if (ColorUtility.TryParseHtmlString(colorHex, out var color))
         {
             Material newMaterial = new Material(tileRenderer.sharedMaterial) { color = color };

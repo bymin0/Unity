@@ -1,19 +1,20 @@
 {
+  "timer": 90,
   "rows": 12,
   "columns": 10,
   "depth": 1,
   "tiles": [
-    "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY",
-    "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY",
-    "EMPTY", "EMPTY",  "CLUB", "HEART", "EMPTY", "EMPTY", "HEART", "SPADE", "EMPTY", "EMPTY",
-    "EMPTY", "HEART", "EMPTY", "EMPTY", "SPADE", "HEART", "EMPTY", "EMPTY",  "CLUB", "EMPTY",
-    "EMPTY", "DIAMOND","EMPTY","EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "HEART", "EMPTY",
-    "EMPTY", "SPADE", "EMPTY", "EMPTY","DIAMOND","EMPTY", "EMPTY", "EMPTY","DIAMOND","EMPTY",
-    "EMPTY", "HEART",  "EMPTY","EMPTY", "EMPTY",  "CLUB", "EMPTY", "EMPTY", "SPADE", "EMPTY",
-    "EMPTY", "EMPTY","DIAMOND","EMPTY", "EMPTY", "EMPTY", "EMPTY","DIAMOND","EMPTY", "EMPTY",
-    "EMPTY", "EMPTY", "EMPTY",  "CLUB", "EMPTY", "EMPTY", "HEART", "EMPTY", "EMPTY", "EMPTY",
-    "EMPTY", "EMPTY", "EMPTY", "EMPTY","DIAMOND","HEART", "EMPTY", "EMPTY", "EMPTY", "EMPTY",
-    "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY",
-    "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY", "EMPTY"
+    0,  0,  0,  0,  0,  0,  0,  0,  0, 0,
+    0,  0,  0,  0,  0,  0,  0,  0,  0, 0,
+    0,  0, 17, 14,  0,  0, 14, 16,  0, 0,
+    0, 14,  0,  0, 16, 14,  0,  0, 17, 0,
+    0, 15,  0,  0,  0,  0,  0,  0, 14, 0,
+    0, 16,  0,  0, 15,  0,  0,  0, 15, 0,
+    0, 14,  0,  0,  0, 17,  0,  0, 16, 0,
+    0,  0, 15,  0,  0,  0,  0, 15,  0, 0,
+    0,  0,  0, 17,  0,  0, 14,  0,  0, 0,
+    0,  0,  0,  0, 15, 14,  0,  0,  0, 0,
+    0,  0,  0,  0,  0,  0,  0,  0,  0, 0,
+    0,  0,  0,  0,  0,  0,  0,  0,  0, 0
   ]
 }

@@ -9,12 +9,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public int currentLevel = 1;
 
-   /* public Vector2 start;
-    public Vector2 end;*/
     public GameObject tilePrefab;
 
     private DataManager dataManager;
     private BoardManager boardManager;
+    private ItemManager itemManager;
     // save clicked tile info
     private Tile firstSelectedTile = null;
     private Tile secondSelectedTile = null;
@@ -36,8 +35,9 @@ public class GameManager : MonoBehaviour
     {
         dataManager = FindeComponet<DataManager>();
         boardManager = FindeComponet<BoardManager>();
+        itemManager= FindeComponet<ItemManager>();
 
-        if (dataManager != null && boardManager != null)
+        if (dataManager != null && boardManager != null && itemManager != null)
             LoadLevel(currentLevel);
     }
 
@@ -55,12 +55,16 @@ public class GameManager : MonoBehaviour
     {
         LevelData levelData = dataManager.LoadLevelData(levelNumber);
         if (levelData != null)
+        {
             boardManager.GenerateTiles(levelData, tilePrefab);
+            itemManager.SetTime(levelData.timer);
+        }
     }
 
     // Tile Click event
     public void OnTileClicked(Tile clickedTile)
     {
+        Debug.Log("clickedTile info\nrow: " + clickedTile.Row + ", col: " + clickedTile.Col + ", type: " + clickedTile.Type + ", idx = [" + clickedTile.Row + ", "+clickedTile.Col + "]");
         if (clickedTile == null)
         {
             Debug.LogError("Clicked tile is null");
@@ -69,43 +73,16 @@ public class GameManager : MonoBehaviour
         if (firstSelectedTile == null)
         {
             firstSelectedTile = clickedTile;
-            Debug.Log("First tile selected: " + firstSelectedTile.Type);
         }
         else if (secondSelectedTile == null && clickedTile != firstSelectedTile)
         {
             secondSelectedTile = clickedTile;
-            Debug.Log("Second tile selected: " + secondSelectedTile.Type);
 
             boardManager.CheckMatch(firstSelectedTile, secondSelectedTile);
             ResetSelection();
-            //CheckMatch();
         }
     }
 
-    /*void CheckMatch()
-    {
-        if (firstSelectedTile == null || secondSelectedTile == null)
-        {
-            Debug.LogError("One of the tiles is null. Cannot proced with matching");
-            return;
-        }
-        if (firstSelectedTile.Type == secondSelectedTile.Type)
-        {
-            start = new Vector2(firstSelectedTile.Row, firstSelectedTile.Col);
-            end = new Vector2(secondSelectedTile.Row, secondSelectedTile.Col);
-
-            if (boardManager.AreTilesMatching(start, end, board))
-            {
-                boardManager.HandleMatch(firstSelectedTile, secondSelectedTile);
-            }
-        }
-        else
-        {
-            Debug.Log("Tiles do not match");
-        }
-
-        ResetSelection();
-    }*/
     void ResetSelection()
     {
         firstSelectedTile = null;

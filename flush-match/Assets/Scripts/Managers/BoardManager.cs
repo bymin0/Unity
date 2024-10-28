@@ -13,6 +13,7 @@ public class BoardManager : MonoBehaviour
 
     public TileType Type;
     public GameManager gameManager;
+    public GameObject dummyObject;  
 
     private void Start()
     {
@@ -70,7 +71,7 @@ public class BoardManager : MonoBehaviour
                 Tile tile = newTile.GetComponent<Tile>();
                 
                 Initialize(tileType, row, col);
-                tile.UpdateTileDisplay(Type);
+                tile.UpdateTileDisplay(Type, row, col);
             }
         }
     }
@@ -84,21 +85,23 @@ public class BoardManager : MonoBehaviour
         }
         if (firstSelectedTile.Type == secondSelectedTile.Type)
         {
-            Vector2 start = new Vector2(firstSelectedTile.Row, firstSelectedTile.Col);
-            Vector2 end = new Vector2(secondSelectedTile.Row, secondSelectedTile.Col);
+            // Vector2 start = new Vector2(firstSelectedTile.Row, firstSelectedTile.Col);
+            // Vector2 end = new Vector2(secondSelectedTile.Row, secondSelectedTile.Col);
+            Vector2 start = new Vector2( firstSelectedTile.Col, firstSelectedTile.Row);
+            Vector2 end = new Vector2(secondSelectedTile.Col, secondSelectedTile.Row );
 
             if (AreTilesMatching(start, end, board))
             {
                 HandleMatch(firstSelectedTile, secondSelectedTile);
+                ChangeBoard(firstSelectedTile, secondSelectedTile);
             }
         }
         else
         {
             Debug.Log("Tiles do not match");
         }
-
-        ChangeBoard(firstSelectedTile, secondSelectedTile);
     }
+
     void ChangeBoard(Tile firstSelectedTile, Tile secondSelectedTile)
     {
         board[firstSelectedTile.Row, firstSelectedTile.Col] = 0;
@@ -132,18 +135,18 @@ public class BoardManager : MonoBehaviour
             visited.Add(currentPosition);
 
             // reached to end position -> can remove tile set
-            if (currentPosition == end)
-            {
-                Debug.Log($"Reached destination: {end} with {bends} bends."); // debugging 
-                return true;
-            }
+            // if (currentPosition == end && bends < 4)
+            // {
+            //     Debug.Log($"Reached destination: {end} with {bends} bends."); // debugging 
+            //     return true;
+            // }
 
-            // set limit bends time
-            if (bends > 3)
-            {
-                Debug.Log($"Too many bends at: {currentPosition}. Continuing to next node..."); // debugging
-                continue; 
-            }
+            // // set limit bends time
+            // if (bends > 3)
+            // {
+            //     Debug.Log($"Too many bends at: {currentPosition}. Continuing to next node..."); // debugging
+            //     continue; 
+            // }
 
             // search 4 direction
             foreach (var direction in directions)
@@ -158,19 +161,25 @@ public class BoardManager : MonoBehaviour
                     continue;
                 }
 
+                int newBends = bends + (direction != lastDirection && lastDirection != Vector2.zero ? 1 : 0);
+                
+                if(newBends > 3) continue;
+
+                if (nextPosition == end )
+                    return true;
+                
                 // skip if already visited node or reached other tile
                 if (visited.Contains(nextPosition) || board[(int)nextPosition.y, (int)nextPosition.x] != 0)
                 {
-                    Debug.Log($"Blocked or already visited: {nextPosition}"); // debugging
+                    Debug.Log($"\t\tBlocked or already visited: {nextPosition}"); // debugging
                     continue;
                 }
                 
                 // turn in a diffrent direction
-                int newBends = bends + (direction != lastDirection && lastDirection != Vector2.zero ? 1 : 0);
-
+                
                 queue.Enqueue((nextPosition, newBends, direction));
                 Debug.Log($"Enqueued: {nextPosition} with bends: {newBends}"); // debugging
-                visited.Add(nextPosition);
+                //visited.Add(nextPosition);
             }
         }
 
@@ -185,4 +194,6 @@ public class BoardManager : MonoBehaviour
         firstTile.gameObject.SetActive(false);
         secondTile.gameObject.SetActive(false);
     }
+    
+    
 }
