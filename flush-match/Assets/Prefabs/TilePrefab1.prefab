@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.32941177, g: 0.7058824, b: 0.65882355, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fa96ae4c0dc95439e6e9f83d9cbf88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imgSize: {x: 0, y: 0}
+  image: {fileID: 0}
   Type: 0
   gameManager: {fileID: 0}
   tileRenderer: {fileID: 0}

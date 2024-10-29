@@ -134,20 +134,6 @@ public class BoardManager : MonoBehaviour
             Debug.Log($"Dequeued: {currentPosition} with bends: {bends}"); // debugging
             visited.Add(currentPosition);
 
-            // reached to end position -> can remove tile set
-            // if (currentPosition == end && bends < 4)
-            // {
-            //     Debug.Log($"Reached destination: {end} with {bends} bends."); // debugging 
-            //     return true;
-            // }
-
-            // // set limit bends time
-            // if (bends > 3)
-            // {
-            //     Debug.Log($"Too many bends at: {currentPosition}. Continuing to next node..."); // debugging
-            //     continue; 
-            // }
-
             // search 4 direction
             foreach (var direction in directions)
             {
@@ -163,7 +149,7 @@ public class BoardManager : MonoBehaviour
 
                 int newBends = bends + (direction != lastDirection && lastDirection != Vector2.zero ? 1 : 0);
                 
-                if(newBends > 3) continue;
+                if(newBends > 2) continue;
 
                 if (nextPosition == end )
                     return true;
