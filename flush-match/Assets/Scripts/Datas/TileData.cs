@@ -19,7 +19,8 @@ public enum TileType
     HEART,
     DIAMOND,
     SPADE,
-    CLUB
+    CLUB,
+    JOKER
 }
 
 public class TileData
@@ -34,7 +35,8 @@ public class TileData
             { TileType.HEART, "#FF0000" },
             { TileType.DIAMOND, "#00FF00" },
             { TileType.SPADE, "#0000FF" },
-            { TileType.CLUB, "#00FfFF" }
+            { TileType.CLUB, "#00FFFF" },
+            { TileType.JOKER, "#FA5882" }
         };
 
         tileSprites = new Dictionary<TileType, string>()

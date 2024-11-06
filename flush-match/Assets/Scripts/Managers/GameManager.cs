@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UIElements;
+using static UserData;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     private DataManager dataManager;
     private BoardManager boardManager;
     private ItemManager itemManager;
+    private UIManager uiManager;
+    private Tile tile;
     // save clicked tile info
     private Tile firstSelectedTile = null;
     private Tile secondSelectedTile = null;
@@ -35,10 +38,25 @@ public class GameManager : MonoBehaviour
     {
         dataManager = FindeComponet<DataManager>();
         boardManager = FindeComponet<BoardManager>();
+        boardManager.Initialize(this, itemManager);
         itemManager= FindeComponet<ItemManager>();
+        uiManager= FindeComponet<UIManager>();
 
-        if (dataManager != null && boardManager != null && itemManager != null)
-            LoadLevel(currentLevel);
+        if (dataManager != null && boardManager != null && itemManager != null && uiManager != null)
+        {
+            InitialGame(currentLevel);
+            itemManager.Initialize(this, boardManager);
+            uiManager.Initialize(this, itemManager);
+        }
+    }
+
+    private void Update()
+    {
+        if (itemManager.GetTime() > 0)
+        {
+            itemManager.SetTime(itemManager.GetTime() - Time.deltaTime);
+            uiManager.TimerSlider.value = itemManager.GetTime();
+        }
     }
 
     private T FindeComponet<T>() where T : MonoBehaviour
@@ -51,14 +69,36 @@ public class GameManager : MonoBehaviour
     }
 
     // load json file & call GenerateTiles(levelData)
-    public void LoadLevel(int levelNumber)
+    public void InitialGame(int levelNumber)
     {
+        UserData userData = dataManager.LoadUserData();
         LevelData levelData = dataManager.LoadLevelData(levelNumber);
         if (levelData != null)
         {
+            SetUserInfo(userData, levelData.timer, levelData.stars);
             boardManager.GenerateTiles(levelData, tilePrefab);
-            itemManager.SetTime(levelData.timer);
         }
+    }
+
+    public void SetUserInfo(UserData userData, float time, int[] stars)
+    {
+        itemManager.SetTime(time);
+        uiManager.TimerSlider.maxValue = time;
+        uiManager.TimerSlider.value = time;
+        uiManager.ShuffleCntTxt.text = userData.itemCnt.ShuffleCnt.ToString();
+        uiManager.TimerCntTxt.text = userData.itemCnt.TimerCnt.ToString();
+        uiManager.JokerCntTxt.text = userData.itemCnt.JokerCnt.ToString();
+        uiManager.AutoCntTxt.text = userData.itemCnt.AutoCnt.ToString();
+
+        Dictionary<string, int> items = new Dictionary<string, int>()
+        {
+            {itemManager.ShuffleCnt, userData.itemCnt.ShuffleCnt},
+            {itemManager.TimerCnt, userData.itemCnt.TimerCnt},
+            {itemManager.JokerCnt, userData.itemCnt.JokerCnt},
+            {itemManager.AutoCnt, userData.itemCnt.AutoCnt}
+        };
+            
+        itemManager.initItemCnt(items, time, stars);
     }
 
     // Tile Click event
@@ -88,4 +128,5 @@ public class GameManager : MonoBehaviour
         firstSelectedTile = null;
         secondSelectedTile = null;
     }
+
 }

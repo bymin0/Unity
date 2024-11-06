@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 using UnityEngine.UI;
 
 public class Tile : MonoBehaviour
@@ -16,10 +16,24 @@ public class Tile : MonoBehaviour
     public TileData tileData;
     public GameManager gameManager;
     public Renderer tileRenderer;
+    private BoardManager boardManager;
 
-    private void Start()
+    public void Initialize(GameManager gameManager, BoardManager boardManager)
     {
-        gameManager = GameManager.instance; // cashing
+        // gameManager = GameManager.instance; // cashing
+        this.gameManager = gameManager;
+        this.boardManager = boardManager;
+    }
+
+    public void Disable()
+    {
+        gameObject.SetActive(false);
+        boardManager.DestoryTile(this);
+    }
+
+    private void OnDestroy()
+    {
+        boardManager.DestoryTile(this);
     }
 
     // display tile's color(or img?)
@@ -36,11 +50,12 @@ public class Tile : MonoBehaviour
             tileData = new TileData();
 
         string colorHex = tileData.GetColor(Type);
-        
+
         if (ColorUtility.TryParseHtmlString(colorHex, out var color))
         {
-            Material newMaterial = new Material(tileRenderer.sharedMaterial) { color = color };
-            tileRenderer.material = newMaterial;
+            /*Material newMaterial = new Material(tileRenderer.sharedMaterial) { color = color };
+            tileRenderer.material = newMaterial;*/
+            tileRenderer.material.color = color;
         }
     }
 
@@ -48,6 +63,6 @@ public class Tile : MonoBehaviour
     void OnMouseDown()
     {
         if (gameManager != null)
-        gameManager.OnTileClicked(this);
+            gameManager.OnTileClicked(this);
     }
 }

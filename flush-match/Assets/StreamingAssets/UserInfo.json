@@ -1,0 +1,10 @@
+{
+  "name": "USER",
+  "level": 1,
+  "itemCnt": {
+    "ShuffleCnt": 3,
+    "TimerCnt": 5,
+    "JokerCnt": 3,
+    "AutoCnt": 2
+  }
+}
