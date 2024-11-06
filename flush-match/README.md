@@ -9,37 +9,96 @@
 ## 🎮 게임 특징
  - **타일 매칭 퍼즐 게임** : 트럼프 카드 테마의 사천성 게임 스타일의 타일 매칭 퍼즐 게임 입니다.
  - **다양한 타일** : 카드의 모양(♥️,♠️,♣️,♦️)과 숫자(A, 2, 3, ... , Q, K)가 타일에 표시됩니다.
+ - **특별한 타일** : 카드 테마에 어울리는 Jocker 타일 아이템이 있습니다.
  - **레벨 기반 진행** : 다양한 난이도를 가진 레벨로 구성되어 있으며, 레벨에 따라 규칙이 달라질 수 있습니다.
 
 ## 🚀 사용 방법
 - 터치 혹은 클릭 방식
 
 ## 🚧 개발 상태
-- **현재 버전** : 0.0v (이제 막 만들기 시작함)
+- **현재 버전** : 0.1v
 - **향후 업데이트 예정**:
-	- [x] 매칭 알고리즘 프로그래밍
-	- [x] 1레벨 타일 템플릿 설정
 	- [ ] 아이템 기능 테스트
+ 		- [ ] Shuffle
+   		- [x] Timer
+     	- [x] Joker
+       	- [ ] Auto
 	- [x] 메인 게임화면 UI 레이아웃
+ 		- [ ] Pause
+   			- [ ] BG sound volume control
+      		- [ ] Effect sound volume control
+         - [ ] Store : Sell item
+		- [ ] Cash : Default 1,000 coin
+  		- [ ] Exit Game : Go back to Start Scene
  	- [ ] 게임 메인 화면 디자인
+  	- [ ] Add Sound
+  		- [ ] Background Sound
+  	 	- [ ] Effect Sound
+  	- [ ] Another Level Template
+  		- [ ] 2 to 10
 - **개발된 것**:
 	- 맵에 타일 생성
    	- 매칭 알고리즘
+   	- Item( 2 / 4 )
+   		- Timer
+   	 	- Joker
 
 <details>
 <summary>2024.10.12(SAT)</summary>
 <div markdown="1">
-<dl>
-	<dt>현재 버전</dt> <dd> : 0.0v (이제 막 만들기 시작함)</dd>
-	<dt>향후 업데이트 예정</dt>
-		<dd>: 매칭 알고리즘 프로그래밍-24.10.17(thu)</dd>
-		<dd>: 1레벨 타일 템플릿 설정-24.10.13(sun)</dd>
-		<dd>: 아이템 기능 테스트</dd>
-		<dd>: 메인 게임화면 UI 레이아웃-24.10.25(fri)</dd>
-		<dd>: 게임 메인 화면 디자인</dd>
-</dl>
+	<dl>
+		<dt>현재 버전</dt> <dd> : 0.0v (이제 막 만들기 시작함)</dd>
+		<dt>향후 업데이트 예정</dt>
+			<dd>01. 매칭 알고리즘 프로그래밍-24.10.17(thu)</dd>
+			<dd>02. 1레벨 타일 템플릿 설정-24.10.13(sun)</dd>
+			<dd>03. 아이템 기능 테스트</dd>
+			<dd>04. 메인 게임화면 UI 레이아웃-24.10.25(fri)</dd>
+			<dd>05. 게임 메인 화면 디자인</dd>
+	</dl>
 </div>
 </details>
+
+<details>
+<summary>2024.11.07(WED)</summary>
+<div markdown="1">
+	<dl>
+		<dt>현재 버전</dt> <dd>: 0.1v</dd>
+		<dt>향후 업데이트 예정</dt>
+			<dd>01. 매칭 알고리즘 프로그래밍-24.10.17(thu)</dd>
+			<dd>02. 1레벨 타일 템플릿 설정-24.10.13(sun)</dd>
+			<dd>03. 아이템 기능 테스트</dd>
+			<dd>04. 메인 게임화면 UI 레이아웃</dd>
+				<ul>
+					<ul>
+						<li>게임화면 UI 레이아웃-24.10.25(fri)</li>
+						<li>Pause</li>
+						<ul>
+							<li>Store : Sell item</li>
+							<li>Cash : Default 1,000 coin</li>
+							<li>Exit Game : Go back to Start Scene</li>
+						</ul>
+					</ul>
+				</ul>
+			<dd>05. 게임 메인 화면 디자인</dd>
+				<ul>
+					<ul>
+						<li>Add Sound</li>
+						<ul>
+							<li>Background Sound</li>
+							<li>Effect Sound</li>
+						</ul>
+					</ul>
+				</ul>
+			<dd>06. Another Level Template</dd>
+				<ul>
+					<ul>
+						<li>2 to 10</li>
+					</ul>
+				</ul>
+	</dl>
+</div>
+</details>
+
 
 ## 📌라이선스
 - 이 소프트웨어는 개인적, 비상업적 사용 목적으로만 사용할 수 있습니다. 상업적 목적으로 이 소프트웨어를 사용, 수정, 배포하는 것은 금지됩니다.
