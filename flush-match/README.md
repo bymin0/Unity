@@ -16,20 +16,20 @@
 - 터치 혹은 클릭 방식
 
 ## 🚧 개발 상태
-- **현재 버전** : 0.1v
+- **현재 버전** : 0.2.1v
 - **향후 업데이트 예정**:
 	- [ ] 아이템 기능 테스트
- 		- [ ] Shuffle
+ 		- [x] Shuffle
    		- [x] Timer
      	- [x] Joker
-       	- [ ] Auto
+       	- [x] Auto
 	- [x] 메인 게임화면 UI 레이아웃
  		- [ ] Pause
    			- [ ] BG sound volume control
       		- [ ] Effect sound volume control
-         - [ ] Store : Sell item
-		- [ ] Cash : Default 1,000 coin
   		- [ ] Exit Game : Go back to Start Scene
+	 - [ ] Store : Sell item
+		- [ ] Cash : Default 1,000 coin
  	- [ ] 게임 메인 화면 디자인
   	- [ ] Add Sound
   		- [ ] Background Sound
@@ -39,9 +39,11 @@
 - **개발된 것**:
 	- 맵에 타일 생성
    	- 매칭 알고리즘
-   	- Item( 2 / 4 )
+   	- Item( 4 / 4 )
    		- Timer
    	 	- Joker
+   	  	- Shuffle
+   	  	- Auto
 
 <details>
 <summary>2024.10.12(SAT)</summary>
@@ -66,7 +68,7 @@
 		<dt>향후 업데이트 예정</dt>
 			<dd>01. 매칭 알고리즘 프로그래밍-24.10.17(thu)</dd>
 			<dd>02. 1레벨 타일 템플릿 설정-24.10.13(sun)</dd>
-			<dd>03. 아이템 기능 테스트</dd>
+			<dd>03. 아이템 기능 테스트-24.11.08(fri)</dd>
 			<dd>04. 메인 게임화면 UI 레이아웃</dd>
 				<ul>
 					<ul>
