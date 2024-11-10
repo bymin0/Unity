@@ -18,11 +18,7 @@
 ## 🚧 개발 상태
 - **현재 버전** : 0.2.1v
 - **향후 업데이트 예정**:
-	- [ ] 아이템 기능 테스트
- 		- [x] Shuffle
-   		- [x] Timer
-     	- [x] Joker
-       	- [x] Auto
+	- [x] 아이템 기능 테스트
 	- [x] 메인 게임화면 UI 레이아웃
  		- [ ] Pause
    			- [ ] BG sound volume control
