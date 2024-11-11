@@ -31,7 +31,7 @@
   		- [ ] Background Sound
   	 	- [ ] Effect Sound
   	- [ ] Another Level Template
-  		- [ ] 2 to 10
+  		- [x] 2 to 10
 - **개발된 것**:
 	- 맵에 타일 생성
    	- 매칭 알고리즘
@@ -90,7 +90,7 @@
 			<dd>06. Another Level Template</dd>
 				<ul>
 					<ul>
-						<li>2 to 10</li>
+						<li>2 to 10-24.11.11(mon)</li>
 					</ul>
 				</ul>
 	</dl>
