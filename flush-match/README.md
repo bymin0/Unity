@@ -16,30 +16,23 @@
 - 터치 혹은 클릭 방식
 
 ## 🚧 개발 상태
-- **현재 버전** : 0.2.1v
+- **현재 버전** : 0.3.2v
 - **향후 업데이트 예정**:
-	- [x] 아이템 기능 테스트
-	- [x] 메인 게임화면 UI 레이아웃
- 		- [ ] Pause
-   			- [ ] BG sound volume control
-      		- [ ] Effect sound volume control
-  		- [ ] Exit Game : Go back to Start Scene
-	 - [ ] Store : Sell item
-		- [ ] Cash : Default 1,000 coin
  	- [ ] 게임 메인 화면 디자인
-  	- [ ] Add Sound
-  		- [ ] Background Sound
-  	 	- [ ] Effect Sound
+  	- [x] Add Sound
+  		- [x] Background Sound
+  	 	- [x] Effect Sound
   	- [ ] Another Level Template
   		- [x] 2 to 10
+  	 	- [ ] 11 to 20
 - **개발된 것**:
 	- 맵에 타일 생성
    	- 매칭 알고리즘
-   	- Item( 4 / 4 )
-   		- Timer
-   	 	- Joker
-   	  	- Shuffle
-   	  	- Auto
+   	- Item
+   		- generic items
+   	 	- one time items
+  - Add BGM, SFX
+  - Save & Load
 
 <details>
 <summary>2024.10.12(SAT)</summary>
@@ -69,7 +62,7 @@
 				<ul>
 					<ul>
 						<li>게임화면 UI 레이아웃-24.10.25(fri)</li>
-						<li>Pause</li>
+						<li>Pause-24.11.15(fri)</li>
 						<ul>
 							<li>Store : Sell item</li>
 							<li>Cash : Default 1,000 coin</li>
@@ -80,7 +73,7 @@
 			<dd>05. 게임 메인 화면 디자인</dd>
 				<ul>
 					<ul>
-						<li>Add Sound</li>
+						<li>Add Sound-24.11.15(fri)</li>
 						<ul>
 							<li>Background Sound</li>
 							<li>Effect Sound</li>
@@ -93,6 +86,32 @@
 						<li>2 to 10-24.11.11(mon)</li>
 					</ul>
 				</ul>
+	</dl>
+</div>
+</details>
+<details>
+<summary>2024.11.17(SUN)</summary>
+<div markdown="1">
+	<dl>
+		<dt>현재 버전</dt> <dd>: 0.3.2v</dd>
+		<dt>향후 업데이트 예정</dt>
+			<dd>01. 매칭 알고리즘 프로그래밍-24.10.17(thu)</dd>
+			<dd>02. 1레벨 타일 템플릿 설정-24.10.13(sun)</dd>
+			<dd>03. 아이템 기능 테스트-24.11.08(fri)</dd>
+			<dd>04. 메인 게임화면 UI 레이아웃-24.11.15(fri)</dd>
+			<dd>05. 게임 메인 화면 디자인</dd>
+				<ul>
+					<ul>
+						<li>Add Sound-24.11.15(fri)</li>
+					</ul>
+				</ul>
+			<dd>06. Another Level Template</dd>
+				<ul>
+					<ul>
+						<li>2 to 10-24.11.11(mon)</li>
+					</ul>
+				</ul>
+			<dd>07. Save & Load-24.11.15(fri)</dd>
 	</dl>
 </div>
 </details>
