@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/start.unity
     guid: 2032bcb3f4d02814e8cd1bc001380c5e
   - enabled: 1
-    path: Assets/Scenes/main.unity
+    path: Assets/Scenes/LoadNSave.unity
+    guid: d600bc059b67d18409e9c805da25067f
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 3b507c7814a05cd44a9010611f952919
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 45e3bcb24b560eb4aadc72b474f019bb
   m_configObjects: {}
