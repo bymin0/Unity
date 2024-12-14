@@ -16,23 +16,12 @@
 - 터치 혹은 클릭 방식
 
 ## 🚧 개발 상태
-- **현재 버전** : 0.3.2v
+- **현재 버전** : 1.3.2v
 - **향후 업데이트 예정**:
  	- [ ] 게임 메인 화면 디자인
-  	- [x] Add Sound
-  		- [x] Background Sound
-  	 	- [x] Effect Sound
-  	- [ ] Another Level Template
-  		- [x] 2 to 10
-  	 	- [ ] 11 to 20
+  	- [ ] 처음 생각했던 컨셉으로 수정하기
 - **개발된 것**:
-	- 맵에 타일 생성
-   	- 매칭 알고리즘
-   	- Item
-   		- generic items
-   	 	- one time items
-  - Add BGM, SFX
-  - Save & Load
+	- 게임 진행에 필요한 기본적인 모든 기능
 
 <details>
 <summary>2024.10.12(SAT)</summary>
@@ -112,6 +101,17 @@
 					</ul>
 				</ul>
 			<dd>07. Save & Load-24.11.15(fri)</dd>
+	</dl>
+</div>
+</details>
+<details>
+<summary>2024.12.14(SAT)</summary>
+<div markdown="1">
+	<dl>
+		<dt>현재 버전</dt> <dd>: 1.3.2v</dd>
+		<dt>향후 업데이트 예정</dt>
+			<dd>01. 게임 메인 화면 디자인</dd>
+			<dd>02. 처음 생각했던 컨셉으로 수정하기</dd>
 	</dl>
 </div>
 </details>
