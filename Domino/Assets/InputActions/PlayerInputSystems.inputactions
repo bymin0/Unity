@@ -1,0 +1,54 @@
+{
+    "name": "PlayerInputSystems",
+    "maps": [
+        {
+            "name": "GamePlay",
+            "id": "357b070c-d97d-4325-8075-f97de790c77b",
+            "actions": [
+                {
+                    "name": "PlaceDimino",
+                    "type": "Button",
+                    "id": "010e47aa-9154-4b16-8c2d-dd6deee1106f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StartChain",
+                    "type": "Button",
+                    "id": "fe5e9fd5-7c19-4794-9352-01342d6e117a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f64c77a8-1e30-497f-86ec-2c10b516c446",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlaceDimino",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c39975f9-30dd-4a8b-a381-0a237f6f8908",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartChain",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
